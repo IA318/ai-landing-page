@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>IDO Automations · אוטומציות חכמות וסוכני AI לעסקים</title>
-  <meta name="description" content="דף נחיתה ממותג וייחודי: אפיון, בנייה והטמעה של אוטומציות וסוכני AI. Make/Zapier, WhatsApp/CRM/ERP/BI. קביעת שיחה מהירה." />
-  <meta property="og:title" content="IDO Automations · אוטומציות חכמות לעסקים" />
-  <meta property="og:description" content="ממוקדים בתוצאה: אוטומציה שמחזיקה מים, תיעוד מלא, ותמיכה נוחה. בואו נדבר." />
+  <title>Taskwish · אוטומציות חכמות וסוכני AI לעסקים</title>
+  <meta name="description" content="Taskwish: אוטומציות חכמות וסוכני AI שמורידים עומס ומעלים ביצועים. Make/Zapier, WhatsApp/CRM/ERP/BI. קביעת שיחה מהירה." />
+  <meta property="og:title" content="Taskwish · אוטומציות חכמות וסוכני AI" />
+  <meta property="og:description" content="עמוד כהה-אלגנטי, לוגו טיפוגרפי + אייקון ניאון, רקעים חיים, טופס מחובר ל‑Make." />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0f172a" />
+  <meta name="theme-color" content="#0a0f1a" />
 
   <!-- Fonts & Tailwind -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,72 +16,130 @@
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { colors: { brand: { DEFAULT: '#06b6d4', dark:'#0891b2' }, ink:'#0f172a', sand:'#f8fafc' } } } }
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0a0f1a',
+            glow: { DEFAULT: '#00e0ff', soft:'#7b5cff' },
+            fog: '#cbd5e1',
+          },
+          boxShadow: {
+            glow: '0 0 0 2px rgba(0,224,255,.25), 0 0 30px rgba(0,224,255,.35)',
+            glowSoft: '0 0 0 2px rgba(123,92,255,.25), 0 0 26px rgba(123,92,255,.35)'
+          }
+        }
+      }
+    }
   </script>
   <style>
     html,body{font-family:Heebo,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Noto Sans',sans-serif}
     .field:invalid{outline:2px solid #ef4444}
-    .grain{position:relative}
-    .grain:before{content:'';position:absolute;inset:-20%;background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0 0 0 0 0.04 0.06 0"/></feComponentTransfer></filter><rect width="120" height="120" filter="url(%23n)"/></svg>');opacity:.16;mix-blend-mode:multiply;pointer-events:none}
-    .blob{filter: blur(40px); opacity:.35}
-    .tag{font-size:12px;background:linear-gradient(90deg,#e2e8f0,transparent) right/200% 100% no-repeat}
+    /* Animated gradient bg */
+    .nebula{background: radial-gradient(60% 60% at 20% 20%, rgba(123,92,255,.25) 0%, rgba(10,15,26,0) 60%),
+                       radial-gradient(45% 45% at 80% 30%, rgba(0,224,255,.25) 0%, rgba(10,15,26,0) 55%),
+                       radial-gradient(40% 50% at 50% 80%, rgba(0,224,255,.15) 0%, rgba(10,15,26,0) 60%), #0a0f1a;}
+    .grad-move{background: conic-gradient(from 90deg, #00e0ff22, #7b5cff22, #00e0ff22); filter: blur(60px); animation: spin 18s linear infinite;}
+    @keyframes spin { to { transform: rotate(360deg); } }
+    /* Logo star pulse */
+    @keyframes twinkle { 0%,100% {opacity:.55; transform: scale(1)} 50% {opacity:1; transform: scale(1.15)} }
+    .star{ filter: drop-shadow(0 0 8px rgba(0,224,255,.6)); animation: twinkle 2.8s ease-in-out infinite; }
+    /* Neon buttons */
+    .btn-neon{ box-shadow: 0 0 20px rgba(0,224,255,.35); transition: transform .15s ease, box-shadow .2s ease; }
+    .btn-neon:hover{ transform: translateY(-1px); box-shadow: 0 0 30px rgba(0,224,255,.55); }
+    /* Cards */
+    .card{ background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)); border: 1px solid rgba(255,255,255,.08); }
+    /* Hero SVG */
+    .net-line{ stroke: #00e0ff; stroke-opacity:.65; stroke-width:1.6; filter: drop-shadow(0 0 6px rgba(0,224,255,.5)); }
+    .net-node{ fill: #7b5cff; filter: drop-shadow(0 0 6px rgba(123,92,255,.7)); }
+    .dash{ stroke-dasharray: 6 6; animation: flow 12s linear infinite; }
+    @keyframes flow{ to { stroke-dashoffset: -120; } }
   </style>
 </head>
-<body class="bg-sand text-ink">
+<body class="bg-ink text-white">
   <!-- Top Ribbon -->
-  <div class="bg-gradient-to-l from-brand/15 to-transparent text-sm text-ink/80">
+  <div class="bg-[#0c1322] text-xs text-fog/90">
     <div class="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between">
-      <p>תיעוד מלא בכל פרויקט · SLA הטמעה מהירה · תמיכה נוחה</p>
-      <a href="#form" class="hidden md:inline-block px-3 py-1.5 rounded-xl border">לקביעת שיחה</a>
+      <p>תיעוד מלא · SLA הטמעה מהירה · תמיכה נוחה</p>
+      <a href="#form" class="hidden md:inline-block px-3 py-1.5 rounded-lg border border-white/10 hover:border-white/20">לקביעת שיחה</a>
     </div>
   </div>
 
   <!-- Header -->
-  <header class="bg-white/90 backdrop-blur sticky top-0 z-40 border-b">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-2xl bg-ink text-white grid place-items-center font-extrabold">ID</div>
-        <p class="text-lg font-extrabold">IDO Automations</p>
-      </div>
-      <nav class="hidden md:flex gap-6 text-sm text-slate-700">
-        <a href="#work" class="hover:text-ink">עבודות</a>
-        <a href="#services" class="hover:text-ink">שירותים</a>
-        <a href="#process" class="hover:text-ink">איך עובדים</a>
-        <a href="#pricing" class="hover:text-ink">חבילות</a>
-        <a href="#form" class="px-4 py-2 rounded-xl bg-ink text-white hover:bg-slate-900">דברו איתי</a>
+  <header class="sticky top-0 z-40 backdrop-blur bg-[#0c1322cc] border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <!-- Logo: Taskwish + star icon -->
+        <div class="relative">
+          <svg class="star" width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2.5l1.9 4.9 5.3.5-4 3.3 1.2 5.1L12 13.9 7.6 16.3l1.2-5.1-4-3.3 5.3-.5L12 2.5z" fill="#00e0ff"/>
+          </svg>
+        </div>
+        <span class="text-lg font-extrabold tracking-tight">Taskwish</span>
+      </a>
+      <nav class="hidden md:flex gap-6 text-sm text-fog/90">
+        <a href="#work" class="hover:text-white">עבודות</a>
+        <a href="#services" class="hover:text-white">שירותים</a>
+        <a href="#process" class="hover:text-white">איך עובדים</a>
+        <a href="#pricing" class="hover:text-white">חבילות</a>
+        <a href="#form" class="px-4 py-2 rounded-xl bg-[#0f172a] border border-white/10 btn-neon">דברו איתי</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden bg-white">
-    <div class="absolute -left-24 -top-24 w-96 h-96 rounded-full bg-brand blob"></div>
-    <div class="absolute -right-24 -bottom-24 w-[28rem] h-[28rem] rounded-full bg-sky-200 blob"></div>
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 nebula"></div>
+    <div class="absolute -inset-20 grad-move opacity-50"></div>
 
-    <div class="max-w-6xl mx-auto px-4 py-14 md:py-20 grid md:grid-cols-12 gap-10 items-center grain">
-      <div class="md:col-span-7">
-        <span class="tag px-3 py-1 rounded-full inline-block text-slate-700">אוטומציה שעובדת. לא רק מצגת.</span>
-        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mt-4">דף נחיתה חד, מיתוג עקבי, ותכל'ס פתרונות שמורידים עומס</h1>
-        <p class="mt-4 text-slate-700 text-lg">בונים תהליכים וסוכני AI שמתחברים ל‑CRM, WhatsApp, מיילים ו‑BI. מדדים ברורים, הטמעה מהירה, ותיעוד שתוכלו להמשיך ממנו לבד.</p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="#form" class="px-6 py-3 rounded-xl bg-ink text-white">בואו נדבר</a>
-          <a href="#work" class="px-6 py-3 rounded-xl border">לראות דוגמא</a>
+    <div class="relative max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-12 gap-10 items-center">
+      <div class="md:col-span-6">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-fog/90 text-xs">
+          <span class="w-1.5 h-1.5 rounded-full bg-glow"></span> אוטומציה שעובדת. תכל'ס.
+        </span>
+        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mt-4">סוכני AI ואוטומציות שמורידים עומס ומעלים תוצאות</h1>
+        <p class="mt-4 text-fog text-lg">אפיון חד, חיבור מערכות, בנייה ב‑Make/Zapier, בוטי WhatsApp ותהליכים פנימיים עם מדדים ברורים. הכל מתועד, נקי, ונוח לתחזוקה.</p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="#form" class="px-6 py-3 rounded-xl bg-[#0f172a] border border-white/10 btn-neon">לקביעת שיחה</a>
+          <a href="#work" class="px-6 py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10">לראות דוגמה</a>
         </div>
         <div class="mt-6 grid grid-cols-3 gap-4 text-center">
-          <div class="bg-sand rounded-xl border p-3"><p class="text-2xl font-extrabold">14</p><p class="text-xs text-slate-600">ימי הקמה טיפוסיים</p></div>
-          <div class="bg-sand rounded-xl border p-3"><p class="text-2xl font-extrabold">72%</p><p class="text-xs text-slate-600">פחות טעויות ידניות</p></div>
-          <div class="bg-sand rounded-xl border p-3"><p class="text-2xl font-extrabold">5×</p><p class="text-xs text-slate-600">חישוב החזר ממוצע</p></div>
+          <div class="card rounded-xl p-3"><p class="text-2xl font-extrabold text-white">14</p><p class="text-[11px] text-fog/80">ימי הקמה טיפוסיים</p></div>
+          <div class="card rounded-xl p-3"><p class="text-2xl font-extrabold text-white">72%</p><p class="text-[11px] text-fog/80">פחות טעויות ידניות</p></div>
+          <div class="card rounded-xl p-3"><p class="text-2xl font-extrabold text-white">5×</p><p class="text-[11px] text-fog/80">חישוב החזר ממוצע</p></div>
         </div>
       </div>
-      <div class="md:col-span-5">
-        <div class="relative bg-white rounded-3xl shadow-sm border p-5">
-          <div class="absolute -top-6 -left-6 w-20 h-20 bg-sky-100 rounded-3xl rotate-12"></div>
-          <div class="relative">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&auto=format&fit=crop" alt="חיבורים בין מערכות" class="rounded-2xl" />
-          </div>
-          <div class="mt-4 text-sm text-slate-600">
-            מראה את העיקר: מקור → עיבוד → יעד. אם תרצה, נכניס אנימציה עדינה.
-          </div>
+      <div class="md:col-span-6">
+        <!-- Tech Illustration (SVG network) replaces stock photo -->
+        <div class="relative card rounded-3xl p-5">
+          <svg viewBox="0 0 600 380" class="w-full h-auto" aria-label="רשת חיבורים דיגיטלית">
+            <defs>
+              <filter id="glowCyan" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            <!-- dashed animated lines -->
+            <path class="net-line dash" d="M50 320 C 150 260, 220 280, 310 210" fill="none" />
+            <path class="net-line dash" d="M80 80 C 180 120, 260 90, 330 160" fill="none" />
+            <path class="net-line dash" d="M300 200 C 380 240, 440 200, 520 240" fill="none" />
+            <path class="net-line dash" d="M260 100 C 340 140, 400 120, 480 160" fill="none" />
+            <path class="net-line dash" d="M120 210 C 210 180, 240 240, 330 210" fill="none" />
+            <!-- nodes -->
+            <circle class="net-node" cx="50" cy="320" r="5"/>
+            <circle class="net-node" cx="80" cy="80" r="5"/>
+            <circle class="net-node" cx="120" cy="210" r="5"/>
+            <circle class="net-node" cx="260" cy="100" r="6"/>
+            <circle class="net-node" cx="300" cy="200" r="7"/>
+            <circle class="net-node" cx="330" cy="160" r="6"/>
+            <circle class="net-node" cx="330" cy="210" r="6"/>
+            <circle class="net-node" cx="480" cy="160" r="6"/>
+            <circle class="net-node" cx="520" cy="240" r="7"/>
+          </svg>
+          <div class="mt-3 text-sm text-fog/90">הדמיה טכנולוגית: זרימת נתונים בין מקורות ליעדים. בלי תמונות סטוק.</div>
         </div>
       </div>
     </div>
@@ -89,54 +147,54 @@
 
   <!-- Work highlight / Case -->
   <section id="work" class="max-w-6xl mx-auto px-4 py-14">
-    <h2 class="text-2xl font-extrabold">מקרה קצר: לידים → פגישה ביומן</h2>
+    <h2 class="text-2xl font-extrabold">מקרה קצר: ליד → זימון → עדכון CRM</h2>
     <div class="mt-6 grid md:grid-cols-12 gap-6 items-stretch">
-      <div class="md:col-span-5 bg-white rounded-2xl border p-6 flex flex-col justify-between">
+      <div class="md:col-span-5 card rounded-2xl p-6 flex flex-col justify-between">
         <div>
-          <p class="text-slate-700">איסוף לידים מטפסים וקמפיינים, ניקוי נתונים, הפצה ל‑CRM, זימון זום אוטומטי ושליחת וואטסאפ.</p>
-          <ul class="mt-4 text-sm space-y-2">
+          <p class="text-fog">איסוף לידים מטפסים וקמפיינים, ניקוי נתונים, הפצה ל‑CRM, זימון זום אוטומטי ושליחת WhatsApp.</p>
+          <ul class="mt-4 text-sm space-y-2 text-fog/90">
             <li>• 0 כפילויות ב‑CRM</li>
-            <li>• עליה ב‑% שיחות שנקבעו</li>
+            <li>• עליה באחוז השיחות שנקבעו</li>
             <li>• תיעוד מלא + לוגים</li>
           </ul>
         </div>
         <div class="mt-6 grid grid-cols-3 gap-3 text-center">
-          <div class="bg-sand rounded-xl border p-3"><div class="text-xl font-extrabold">→ 48</div><div class="text-xs text-slate-600">שעות נחסכות/חודש</div></div>
-          <div class="bg-sand rounded-xl border p-3"><div class="text-xl font-extrabold">97%</div><div class="text-xs text-slate-600">לידים מזוהים נכון</div></div>
-          <div class="bg-sand rounded-xl border p-3"><div class="text-xl font-extrabold">1 שבוע</div><div class="text-xs text-slate-600">זמן הטמעה</div></div>
+          <div class="rounded-xl border border-white/10 p-3"><div class="text-xl font-extrabold">→ 48</div><div class="text-[11px] text-fog/80">שעות נחסכות/חודש</div></div>
+          <div class="rounded-xl border border-white/10 p-3"><div class="text-xl font-extrabold">97%</div><div class="text-[11px] text-fog/80">זיהוי נכון</div></div>
+          <div class="rounded-xl border border-white/10 p-3"><div class="text-xl font-extrabold">7 ימים</div><div class="text-[11px] text-fog/80">הטמעה</div></div>
         </div>
       </div>
-      <div class="md:col-span-7 bg-white rounded-2xl border p-6">
+      <div class="md:col-span-7 card rounded-2xl p-6">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="rounded-xl border p-4">
-            <p class="text-xs text-slate-500">מקור</p>
+          <div class="rounded-xl border border-white/10 p-4">
+            <p class="text-xs text-fog/80">מקור</p>
             <p class="font-semibold">טופס אתר / Ads</p>
           </div>
-          <div class="rounded-xl border p-4">
-            <p class="text-xs text-slate-500">עיבוד</p>
+          <div class="rounded-xl border border-white/10 p-4">
+            <p class="text-xs text-fog/80">עיבוד</p>
             <p class="font-semibold">העשרה + ניקוי</p>
           </div>
-          <div class="rounded-xl border p-4">
-            <p class="text-xs text-slate-500">יעד</p>
+          <div class="rounded-xl border border-white/10 p-4">
+            <p class="text-xs text-fog/80">יעד</p>
             <p class="font-semibold">HubSpot / Pipedrive</p>
           </div>
         </div>
-        <div class="mt-4 rounded-xl border p-4 text-sm text-slate-600">תצוגת זרימה פשוטה ואינטואיטיבית. נעדכן לפי המערכות שלך כדי שזה יהיה 100% מותאם.</div>
+        <div class="mt-4 rounded-xl border border-white/10 p-4 text-sm text-fog">זרימה פשוטה ואינטואיטיבית. נעדכן לפי המערכות שלך למראה מותאם.</div>
       </div>
     </div>
   </section>
 
   <!-- Services -->
-  <section id="services" class="bg-white border-y">
+  <section id="services" class="bg-[#0c1322] border-y border-white/10">
     <div class="max-w-6xl mx-auto px-4 py-14">
-      <h2 class="text-2xl font-extrabold">מה מקבלים</h2>
+      <h2 class="text-2xl font-extrabold">שירותים</h2>
       <div class="mt-6 grid md:grid-cols-3 gap-6">
-        <div class="bg-white rounded-2xl p-6 border"><h3 class="font-semibold">אפיון חד</h3><p class="mt-2 text-slate-700">מיפוי תהליך, יעדים ו‑KPI.</p></div>
-        <div class="bg-white rounded-2xl p-6 border"><h3 class="font-semibold">בנייה והטמעה</h3><p class="mt-2 text-slate-700">Make/Zapier, בדיקות ותיעוד.</p></div>
-        <div class="bg-white rounded-2xl p-6 border"><h3 class="font-semibold">סוכני AI</h3><p class="mt-2 text-slate-700">לידים, תמיכה, גבייה, תפעול.</p></div>
-        <div class="bg-white rounded-2xl p-6 border"><h3 class="font-semibold">חיבורי CRM/ERP/BI</h3><p class="mt-2 text-slate-700">API, Webhooks וקבצים.</p></div>
-        <div class="bg-white rounded-2xl p-6 border"><h3 class="font-semibold">מדידה ולוגים</h3><p class="mt-2 text-slate-700">דוחות, ניטור והתראות.</p></div>
-        <div class="bg-white rounded-2xl p-6 border"><h3 class="font-semibold">ליווי</h3><p class="mt-2 text-slate-700">תחזוקה ושיפורים.</p></div>
+        <div class="card rounded-2xl p-6"><h3 class="font-semibold">אפיון חד</h3><p class="mt-2 text-fog">מיפוי תהליך, יעדים ו‑KPI.</p></div>
+        <div class="card rounded-2xl p-6"><h3 class="font-semibold">בנייה והטמעה</h3><p class="mt-2 text-fog">Make/Zapier, בדיקות ותיעוד.</p></div>
+        <div class="card rounded-2xl p-6"><h3 class="font-semibold">סוכני AI</h3><p class="mt-2 text-fog">לידים, תמיכה, גבייה, תפעול.</p></div>
+        <div class="card rounded-2xl p-6"><h3 class="font-semibold">חיבורי CRM/ERP/BI</h3><p class="mt-2 text-fog">API, Webhooks וקבצים.</p></div>
+        <div class="card rounded-2xl p-6"><h3 class="font-semibold">מדידה ולוגים</h3><p class="mt-2 text-fog">דוחות, ניטור והתראות.</p></div>
+        <div class="card rounded-2xl p-6"><h3 class="font-semibold">ליווי</h3><p class="mt-2 text-fog">תחזוקה ושיפורים.</p></div>
       </div>
     </div>
   </section>
@@ -145,34 +203,187 @@
   <section id="process" class="max-w-6xl mx-auto px-4 py-14">
     <h2 class="text-2xl font-extrabold">איך עובדים</h2>
     <ol class="mt-6 grid md:grid-cols-4 gap-6">
-      <li class="bg-white rounded-2xl border p-6"><p class="text-xs text-slate-500">שלב 1</p><h3 class="font-semibold">אבחון</h3><p class="text-slate-700 mt-1">מטרות, נתונים ומערכות.</p></li>
-      <li class="bg-white rounded-2xl border p-6"><p class="text-xs text-slate-500">שלב 2</p><h3 class="font-semibold">אפיון</h3><p class="text-slate-700 mt-1">תרשים, גבולות ומדדים.</p></li>
-      <li class="bg-white rounded-2xl border p-6"><p class="text-xs text-slate-500">שלב 3</p><h3 class="font-semibold">בנייה</h3><p class="text-slate-700 mt-1">Make/Zapier + בדיקות.</p></li>
-      <li class="bg-white rounded-2xl border p-6"><p class="text-xs text-slate-500">שלב 4</p><h3 class="font-semibold">הטמעה</h3><p class="text-slate-700 mt-1">הדרכה ולוגים.</p></li>
+      <li class="card rounded-2xl p-6"><p class="text-xs text-fog/80">שלב 1</p><h3 class="font-semibold">אבחון</h3><p class="text-fog mt-1">מטרות, נתונים ומערכות.</p></li>
+      <li class="card rounded-2xl p-6"><p class="text-xs text-fog/80">שלב 2</p><h3 class="font-semibold">אפיון</h3><p class="text-fog mt-1">תרשים, גבולות ומדדים.</p></li>
+      <li class="card rounded-2xl p-6"><p class="text-xs text-fog/80">שלב 3</p><h3 class="font-semibold">בנייה</h3><p class="text-fog mt-1">Make/Zapier + בדיקות.</p></li>
+      <li class="card rounded-2xl p-6"><p class="text-xs text-fog/80">שלב 4</p><h3 class="font-semibold">הטמעה</h3><p class="text-fog mt-1">הדרכה ולוגים.</p></li>
     </ol>
   </section>
 
   <!-- Pricing -->
-  <section id="pricing" class="bg-white border-y">
+  <section id="pricing" class="bg-[#0c1322] border-y border-white/10">
     <div class="max-w-6xl mx-auto px-4 py-14">
       <h2 class="text-2xl font-extrabold">חבילות</h2>
       <div class="mt-6 grid md:grid-cols-3 gap-6">
-        <div class="bg-white rounded-2xl border p-6"><p class="text-xs text-slate-500">פתיחה</p><h3 class="text-xl font-extrabold mt-1">אוטומציה אחת</h3><p class="text-sm mt-2">מהרעיון לייצור.</p><ul class="mt-4 text-sm space-y-2"><li>• עד 10 צעדים</li><li>• תיעוד קצר</li><li>• שבוע אחריות</li></ul><a href="#form" class="mt-6 inline-block px-4 py-2 rounded-xl bg-ink text-white">לבירור</a></div>
-        <div class="bg-white rounded-2xl border p-6 ring-2 ring-brand"><p class="text-xs text-slate-500">מומלץ</p><h3 class="text-xl font-extrabold mt-1">סוכן + תהליכים</h3><p class="text-sm mt-2">סוכן AI + 2–3 אוטומציות.</p><ul class="mt-4 text-sm space-y-2"><li>• KPI</li><li>• ניטור ושבועיים תמיכה</li><li>• דוח תועלת</li></ul><a href="#form" class="mt-6 inline-block px-4 py-2 rounded-xl bg-ink text-white">לקבל הצעה</a></div>
-        <div class="bg-white rounded-2xl border p-6"><p class="text-xs text-slate-500">ריטיינר</p><h3 class="text-xl font-extrabold mt-1">שיפור מתמשך</h3><p class="text-sm mt-2">תור פיצ'רים ותחזוקה.</p><ul class="mt-4 text-sm space-y-2"><li>• שעות חודשיות</li><li>• SLA תמיכה</li><li>• שדרוגים</li></ul><a href="#form" class="mt-6 inline-block px-4 py-2 rounded-xl bg-ink text-white">לתאם</a></div>
+        <div class="card rounded-2xl p-6"><p class="text-xs text-fog/80">פתיחה</p><h3 class="text-xl font-extrabold mt-1">אוטומציה אחת</h3><p class="text-sm mt-2 text-fog">מהרעיון לייצור.</p><ul class="mt-4 text-sm space-y-2 text-fog/90"><li>• עד 10 צעדים</li><li>• תיעוד קצר</li><li>• שבוע אחריות</li></ul><a href="#form" class="mt-6 inline-block px-4 py-2 rounded-xl bg-[#0f172a] border border-white/10 btn-neon">לבירור</a></div>
+        <div class="card rounded-2xl p-6 ring-2 ring-[rgba(0,224,255,.25)] shadow-glow"><p class="text-xs text-fog/80">מומלץ</p><h3 class="text-xl font-extrabold mt-1">סוכן + תהליכים</h3><p class="text-sm mt-2 text-fog">סוכן AI + 2–3 אוטומציות.</p><ul class="mt-4 text-sm space-y-2 text-fog/90"><li>• KPI</li><li>• ניטור ושבועיים תמיכה</li><li>• דוח תועלת</li></ul><a href="#form" class="mt-6 inline-block px-4 py-2 rounded-xl bg-[#0f172a] border border-white/10 btn-neon">לקבל הצעה</a></div>
+        <div class="card rounded-2xl p-6"><p class="text-xs text-fog/80">ריטיינר</p><h3 class="text-xl font-extrabold mt-1">שיפור מתמשך</h3><p class="text-sm mt-2 text-fog">תור פיצ'רים ותחזוקה.</p><ul class="mt-4 text-sm space-y-2 text-fog/90"><li>• שעות חודשיות</li><li>• SLA תמיכה</li><li>• שדרוגים</li></ul><a href="#form" class="mt-6 inline-block px-4 py-2 rounded-xl bg-[#0f172a] border border-white/10 btn-neon">לתאם</a></div>
       </div>
     </div>
   </section>
 
-  <!-- Form -->
-  <section id="form" class="max-w-5xl mx-auto px-4 py-16">
-    <div class="bg-white rounded-3xl border shadow-sm p-6 md:p-10">
-      <h2 class="text-2xl font-extrabold">נשמע מתאים? בואו נקבע שיחה</h2>
-      <p class="mt-2 text-slate-700">הטופס מחובר ל‑Make (אפשר להחליף ל‑Webhook שלך).</p>
+  <!-- Make Demo + Ideas + Stack -->
+  <section id="make-demo" class="max-w-6xl mx-auto px-4 py-14">
+    <h2 class="text-2xl font-extrabold">איך זה נראה בפועל (Make)</h2>
+    <div class="mt-6 grid md:grid-cols-12 gap-6 items-stretch">
+      <div class="md:col-span-7 card rounded-2xl p-6">
+        <svg viewBox="0 0 760 280" class="w-full h-auto" aria-label="תרחיש Make לדוגמה">
+          <!-- nodes -->
+          <g>
+            <rect x="30" y="40" width="140" height="70" rx="12" class="fill-white/5" stroke="white" stroke-opacity=".15" />
+            <text x="100" y="85" text-anchor="middle" fill="#cbd5e1" font-size="14">טופס אתר</text>
+          </g>
+          <g>
+            <rect x="220" y="40" width="140" height="70" rx="12" class="fill-white/5" stroke="white" stroke-opacity=".15" />
+            <text x="290" y="85" text-anchor="middle" fill="#cbd5e1" font-size="14">Make – ניקוי והעשרה</text>
+          </g>
+          <g>
+            <rect x="410" y="40" width="140" height="70" rx="12" class="fill-white/5" stroke="white" stroke-opacity=".15" />
+            <text x="480" y="85" text-anchor="middle" fill="#cbd5e1" font-size="14">CRM</text>
+          </g>
+          <g>
+            <rect x="600" y="40" width="140" height="70" rx="12" class="fill-white/5" stroke="white" stroke-opacity=".15" />
+            <text x="670" y="85" text-anchor="middle" fill="#cbd5e1" font-size="14">WhatsApp</text>
+          </g>
+          <!-- lines -->
+          <path d="M170 75 H220" class="net-line dash"/>
+          <path d="M360 75 H410" class="net-line dash"/>
+          <path d="M550 75 H600" class="net-line dash"/>
+          <!-- notes row 2 -->
+          <g>
+            <rect x="220" y="170" width="140" height="70" rx="12" class="fill-white/5" stroke="white" stroke-opacity=".15" />
+            <text x="290" y="210" text-anchor="middle" fill="#cbd5e1" font-size="14">קביעת זום</text>
+          </g>
+          <g>
+            <rect x="410" y="170" width="140" height="70" rx="12" class="fill-white/5" stroke="white" stroke-opacity=".15" />
+            <text x="480" y="210" text-anchor="middle" fill="#cbd5e1" font-size="14">מייל תודה</text>
+          </g>
+          <path d="M290 110 V170" class="net-line dash"/>
+          <path d="M480 110 V170" class="net-line dash"/>
+        </svg>
+        <p class="mt-3 text-sm text-fog/90">הדגמה בלבד: כשמגיע ליד חדש → ניקוי והעשרה ב‑Make → יצירת לקוח ב‑CRM → הודעת WhatsApp + קביעת זום + מייל תודה.</p>
+      </div>
+      <div class="md:col-span-5 card rounded-2xl p-6">
+        <h3 class="font-semibold">מה חשוב כאן</h3>
+        <ul class="mt-3 text-sm space-y-2 text-fog/90">
+          <li>• ולידציות: אימייל, טלפון, כפילויות</li>
+          <li>• enrichment: מידע חברה, תחום, ציון ליד</li>
+          <li>• לוגים והתראות במקרה כשל</li>
+          <li>• תיעוד מלא כך שהצוות שלך יוכל לתחזק</li>
+        </ul>
+        <a href="#form" class="mt-5 inline-block px-4 py-2 rounded-xl bg-[#0f172a] border border-white/10 btn-neon">רוצה לראות את זה אצלך?</a>
+      </div>
+    </div>
+  </section>
 
-      <div id="banner-success" class="hidden mt-4 p-4 rounded-xl bg-green-50 text-green-800 border border-green-200">הפנייה התקבלה. תודה! נחזור אליכם.</div>
-      <div id="banner-error" class="hidden mt-4 p-4 rounded-xl bg-red-50 text-red-800 border border-red-200">משהו השתבש. נסו שוב או כתבו לנו.</div>
+  <section id="ideas" class="bg-[#0c1322] border-y border-white/10">
+    <div class="max-w-6xl mx-auto px-4 py-14">
+      <h2 class="text-2xl font-extrabold">מה אפשר לאוטומט</h2>
+      <div class="mt-6 grid md:grid-cols-3 gap-6">
+        <div class="card rounded-2xl p-6"><h3 class="font-semibold">ניהול לידים</h3><p class="mt-2 text-fog">קליטה, ניקוי, הפצה ל‑CRM.</p></div>
+        <div class="card rounded-2xl p-6"><h3 class="font-semibold">קביעת פגישות</h3><p class="mt-2 text-fog">זום/קלנדר + תזכורות.</p></div>
+        <div class="card rounded-2xl p-6"><h3 class="font-semibold">מסמכים</h3><p class="mt-2 text-fog">הצעות מחיר, PDF, חתימות.</p></div>
+        <div class="card rounded-2xl p-6"><h3 class="font-semibold">דשבורדים</h3><p class="mt-2 text-fog">Google Sheets/BI.</p></div>
+        <div class="card rounded-2xl p-6"><h3 class="font-semibold">גבייה ותזכורות</h3><p class="mt-2 text-fog">חשבוניות + נוטיפיקציות.</p></div>
+        <div class="card rounded-2xl p-6"><h3 class="font-semibold">שירות לקוחות</h3><p class="mt-2 text-fog">WhatsApp/Slack/מייל.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack" class="max-w-6xl mx-auto px-4 py-14">
+    <h2 class="text-2xl font-extrabold">הכלים שאני עובד איתם</h2>
+    <div class="mt-6 grid grid-cols-3 md:grid-cols-8 gap-3">
+      <div class="rounded-xl border border-white/10 px-3 py-2 text-center text-sm text-fog/90">Make</div>
+      <div class="rounded-xl border border-white/10 px-3 py-2 text-center text-sm text-fog/90">Google Sheets</div>
+      <div class="rounded-xl border border-white/10 px-3 py-2 text-center text-sm text-fog/90">WhatsApp API</div>
+      <div class="rounded-xl border border-white/10 px-3 py-2 text-center text-sm text-fog/90">Pipedrive</div>
+      <div class="rounded-xl border border-white/10 px-3 py-2 text-center text-sm text-fog/90">HubSpot</div>
+      <div class="rounded-xl border border-white/10 px-3 py-2 text-center text-sm text-fog/90">Notion</div>
+      <div class="rounded-xl border border-white/10 px-3 py-2 text-center text-sm text-fog/90">Slack</div>
+      <div class="rounded-xl border border-white/10 px-3 py-2 text-center text-sm text-fog/90">Gmail</div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="form" class="max-w-5xl mx-auto px-4 py-16">
+    <div class="card rounded-3xl p-6 md:p-10">
+      <h2 class="text-2xl font-extrabold">נשמע מתאים? בואו נקבע שיחה</h2>
+      <p class="mt-2 text-fog">הטופס מחובר ל‑Make (אפשר להחליף ל‑Webhook שלך).</p>
+
+      <div id="banner-success" class="hidden mt-4 p-4 rounded-xl bg-emerald-500/15 text-emerald-200 border border-emerald-500/30">הפנייה התקבלה. תודה! נחזור אליכם.</div>
+      <div id="banner-error" class="hidden mt-4 p-4 rounded-xl bg-rose-500/15 text-rose-200 border border-rose-500/30">משהו השתבש. נסו שוב או כתבו לנו.</div>
 
       <form id="leadForm" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4" method="post" action="https://hook.us1.make.com/6a7ipmurmbfmzmkwfcvcb6gkm8olrmgm" novalidate>
-        <div><label class="block text-sm mb-1" for="full_name">שם מלא*</label><input id="full_name" name="full_name" required class="field w-full rounded-xl border p-3" placeholder="שם פרטי ומשפחה" /></div>
-        <div><label class="block text-sm mb-1" for="email">אימייל*</label><input id="email" name="email" type="email" required class="field w-full
+        <div><label class="block text-sm mb-1" for="full_name">שם מלא*</label><input id="full_name" name="full_name" required class="field w-full rounded-xl border border-white/10 bg-white/5 p-3" placeholder="שם פרטי ומשפחה" /></div>
+        <div><label class="block text-sm mb-1" for="email">אימייל*</label><input id="email" name="email" type="email" required class="field w-full rounded-xl border border-white/10 bg-white/5 p-3" placeholder="name@company.com" /></div>
+        <div><label class="block text-sm mb-1" for="phone">טלפון</label><input id="phone" name="phone" class="w-full rounded-xl border border-white/10 bg-white/5 p-3" placeholder="050‑1234567" /></div>
+        <div><label class="block text-sm mb-1" for="company">חברה</label><input id="company" name="company" class="w-full rounded-xl border border-white/10 bg-white/5 p-3" placeholder="שם החברה" /></div>
+        <div><label class="block text-sm mb-1" for="interest">מה מעניין אתכם?*</label>
+          <select id="interest" name="interest" required class="field w-full rounded-xl border border-white/10 bg-white/5 p-3">
+            <option value="" selected disabled>בחרו אפשרות</option>
+            <option>אוטומציה ב‑Make</option>
+            <option>סוכן AI מותאם אישית</option>
+            <option>חיבורי CRM/ERP/BI</option>
+            <option>ייעוץ ואפיון</option>
+          </select>
+        </div>
+        <div><label class="block text-sm mb-1" for="budget">טווח תקציב</label>
+          <select id="budget" name="budget" class="w-full rounded-xl border border-white/10 bg-white/5 p-3">
+            <option value="לא בטוח/ה">לא בטוח/ה</option>
+            <option>עד 5,000 ₪</option>
+            <option>5,000–15,000 ₪</option>
+            <option>15,000–40,000 ₪</option>
+            <option>40,000+ ₪</option>
+          </select>
+        </div>
+        <div class="md:col-span-2"><label class="block text-sm mb-1" for="message">כמה מילים על הצורך*</label><textarea id="message" name="message" required rows="4" class="field w-full rounded-xl border border-white/10 bg-white/5 p-3" placeholder="מה תרצו לאוטומט או איזה סוכן לבנות"></textarea></div>
+        <div class="md:col-span-2 flex items-center gap-2 mt-2"><input id="consent" name="consent" type="checkbox" required class="field w-4 h-4" /><label for="consent" class="text-sm text-fog">מאשר/ת יצירת קשר והצעת שירות</label></div>
+        <div class="hidden" aria-hidden="true"><label>השאירו ריק</label><input type="text" name="website" tabindex="-1" autocomplete="off" /></div>
+        <input type="hidden" name="page_url" id="page_url" />
+        <input type="hidden" name="timestamp" id="timestamp" />
+        <input type="hidden" name="utm_source" id="utm_source" />
+        <input type="hidden" name="utm_medium" id="utm_medium" />
+        <input type="hidden" name="utm_campaign" id="utm_campaign" />
+        <input type="hidden" name="utm_term" id="utm_term" />
+        <input type="hidden" name="utm_content" id="utm_content" />
+        <div class="md:col-span-2 mt-2 flex items-center justify-between gap-4"><button id="submitBtn" class="px-6 py-3 rounded-xl bg-[#0f172a] border border-white/10 btn-neon">שליחה</button><p class="text-xs text-fog/80">אני עונה בעצמי על כל פנייה, בלי בוט. תשאירו כמה מילים ונבדוק יחד איך לאוטומט אצלכם.</p></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-xs text-fog/70 py-10 border-t border-white/10">© <span id="y"></span> Taskwish · כל הזכויות שמורות</footer>
+
+  <!-- Floating CTA -->
+  <a href="#form" class="fixed bottom-5 left-5 z-40 rounded-full shadow-glow bg-[#0f172a] border border-white/10 px-4 py-3 btn-neon">יש לכם שאלה? נדבר</a>
+
+  <script>
+    // metadata + utm
+    (function(){
+      const id = s => document.getElementById(s);
+      id('page_url').value = window.location.href;
+      id('timestamp').value = new Date().toISOString();
+      const p = new URLSearchParams(window.location.search);
+      ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(k=>{ const el = id(k); if(el) el.value = p.get(k) || ''; });
+      id('y').textContent = new Date().getFullYear();
+    })();
+
+    // form submit
+    const form = document.getElementById('leadForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const success = document.getElementById('banner-success');
+    const error = document.getElementById('banner-error');
+    form.addEventListener('submit', async function(e){
+      if(!form.checkValidity()) return; e.preventDefault();
+      const hp = form.querySelector('input[name="website"]').value.trim(); if(hp){ return; }
+      submitBtn.disabled = true; submitBtn.textContent = 'שולח...';
+      success.classList.add('hidden'); error.classList.add('hidden');
+      try{ const fd = new FormData(form); const res = await fetch(form.action, { method:'POST', body:fd });
+        if(res.ok){ form.reset(); success.classList.remove('hidden'); }
+        else { form.submit(); }
+      }catch(err){ error.classList.remove('hidden'); console.error(err); }
+      finally{ submitBtn.disabled = false; submitBtn.textContent = 'שליחה'; }
+    });
+  </script>
+</body>
+</html>
