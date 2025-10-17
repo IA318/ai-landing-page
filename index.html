@@ -3,91 +3,274 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>אוטומציות לעסקים וסוכני AI – קביעת שיחה</title>
-  <meta name="description" content="בניית אוטומציות חכמות לעסקים, סוכני AI מותאמים אישית וחיבור בין מערכות. השאירו פרטים ונחזור אליכם לתיאום." />
-  <!-- Tailwind (CDN) -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>IDO Automations · אוטומציות לעסקים וסוכני AI</title>
+  <meta name="description" content="בניית אוטומציות חכמות וסוכני AI לעסקים: אפיון תהליך, חיבורי CRM/ERP/BI, בוטי וואטסאפ/אתר, דשבורדים, ו‑QA על נתונים. קביעת שיחה מהירה." />
+  <meta property="og:title" content="IDO Automations · אוטומציות לעסקים וסוכני AI" />
+  <meta property="og:description" content="אוטומציות חכמות שמורידות עומס ומעלות ביצועים. הצצה לדוגמאות חיות, מחשבון ROI, וסגירת שיחה במקום." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1400&auto=format&fit=crop" />
+  <meta name="theme-color" content="#0f172a" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html,body{font-family:Heebo,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Noto Sans',sans-serif}
     .field:invalid{outline:2px solid #ef4444}
+    .glass{backdrop-filter: blur(10px); background: rgba(255,255,255,.7)}
+    .shimmer{background:linear-gradient(110deg,#0000 30%,#ffffff40 45%,#0000 60%) 0 0/200% 100%}
   </style>
+  <script>
+    // Tailwind config
+    tailwind.config = { theme: { extend: { colors: { brand:'#0ea5e9' } } } }
+  </script>
+  <script type="application/ld+json">{
+    "@context":"https://schema.org","@type":"ProfessionalService","name":"IDO Automations",
+    "image":"https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1400&auto=format&fit=crop",
+    "description":"אוטומציות לעסקים וסוכני AI: אפיון, בנייה והטמעה, תמיכה.",
+    "areaServed":"IL","sameAs":["https://make.com","https://zapier.com"],
+    "serviceType":["Make","Zapier","WhatsApp Bots","AI Agents","CRM Integrations"]}
+  </script>
 </head>
-<body class="bg-slate-50 text-slate-900">
-  <!-- Header -->
-  <header class="bg-white shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 py-5 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-xl bg-slate-900 text-white grid place-items-center text-lg">AI</div>
-        <p class="text-xl font-semibold">אוטומציות לעסקים וסוכני AI</p>
+<body class="bg-slate-50 text-slate-900 selection:bg-brand/20">
+  <!-- Sticky top bar -->
+  <div class="fixed top-0 inset-x-0 z-40">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="mt-3 rounded-2xl shadow-sm border glass hidden md:flex items-center justify-between px-4 py-2 text-sm">
+        <p class="text-slate-700">מחשבון ROI חדש + דוגמאות חיות לסוכנים ↓</p>
+        <a href="#roi" class="px-3 py-1 rounded-xl bg-slate-900 text-white hover:bg-slate-800">לבדוק חיסכון</a>
       </div>
-      <nav class="hidden md:flex gap-6 text-sm text-slate-600">
-        <a href="#benefits" class="hover:text-slate-900">למה אנחנו</a>
-        <a href="#usecases" class="hover:text-slate-900">שימושים נפוצים</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-b from-white to-slate-100 pt-20">
+    <div class="max-w-6xl mx-auto px-4 py-6 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-slate-900 text-white grid place-items-center text-lg">AI</div>
+        <p class="text-xl font-semibold">IDO Automations</p>
+      </div>
+      <nav class="hidden md:flex gap-6 text-sm text-slate-700">
+        <a href="#live" class="hover:text-slate-900">דוגמאות חיות</a>
+        <a href="#services" class="hover:text-slate-900">שירותים</a>
+        <a href="#process" class="hover:text-slate-900">איך זה עובד</a>
+        <a href="#pricing" class="hover:text-slate-900">חבילות</a>
+        <a href="#faq" class="hover:text-slate-900">שאלות</a>
         <a href="#form" class="px-4 py-2 rounded-xl bg-slate-900 text-white">דברו איתי</a>
       </nav>
     </div>
+
+    <!-- Hero -->
+    <section class="max-w-6xl mx-auto px-4 pb-8 md:pb-16 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h1 class="text-3xl md:text-5xl font-bold leading-tight">
+          אוטומציות וסוכני AI שמפנים זמן ומגדילים תוצאות
+        </h1>
+        <p class="mt-4 text-slate-700 text-lg">אפיון חד, חיבור מערכות, בנייה ב‑Make/Zapier, ובוטים שמטפלים בלידים, תמיכה ותהליכים פנימיים. בלי בלגן. עם מדדים.</p>
+        <ul class="mt-6 grid grid-cols-1 gap-2 text-slate-800">
+          <li class="flex items-start gap-2"><span class="i">✔︎</span> SLA הטמעה מהירה · תמחור ברור · תיעוד מלא</li>
+          <li class="flex items-start gap-2"><span class="i">✔︎</span> CRM, וואטסאפ, מיילים, ERP/BI, חתימות ומסמכים</li>
+          <li class="flex items-start gap-2"><span class="i">✔︎</span> סוכנים ייעודיים: תמיכה, לידים, גבייה, ניהול מלאי</li>
+        </ul>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#form" class="px-6 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800">התחלת שיחה</a>
+          <a href="#live" class="px-6 py-3 rounded-xl border hover:bg-white">לראות דוגמאות</a>
+        </div>
+        <p class="mt-3 text-xs text-slate-500">בממוצע הלקוחות חוסכים 6–20 שעות בחודש לכל עובד.</p>
+      </div>
+      <div class="relative">
+        <div class="bg-white rounded-3xl shadow-sm p-6 border relative">
+          <img alt="אילוסטרציה של חיבורים בין מערכות" class="w-full rounded-2xl" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1400&auto=format&fit=crop" />
+          <div class="absolute -bottom-5 left-4 right-4 bg-white rounded-2xl shadow border p-4 grid md:grid-cols-3 gap-3">
+            <div class="text-center"><p class="text-xl font-bold" id="kpi-hours">0</p><p class="text-xs text-slate-500">שעות נחסכות/חודש</p></div>
+            <div class="text-center"><p class="text-xl font-bold" id="kpi-errors">0%</p><p class="text-xs text-slate-500">פחות טעויות ידניות</p></div>
+            <div class="text-center"><p class="text-xl font-bold" id="kpi-roi">0×</p><p class="text-xs text-slate-500">יחס החזר</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logos / Stack -->
+    <div class="max-w-6xl mx-auto px-4 pb-10">
+      <div class="rounded-3xl border bg-white p-4 md:p-6">
+        <p class="text-sm text-slate-500 mb-3">עובדים עם</p>
+        <div class="grid grid-cols-3 md:grid-cols-6 gap-4 opacity-80">
+          <div class="h-10 bg-slate-100 rounded-xl shimmer animate-[shine_2s_linear_infinite]"></div>
+          <div class="h-10 bg-slate-100 rounded-xl shimmer animate-[shine_2s_linear_infinite]"></div>
+          <div class="h-10 bg-slate-100 rounded-xl shimmer animate-[shine_2s_linear_infinite]"></div>
+          <div class="h-10 bg-slate-100 rounded-xl shimmer animate-[shine_2s_linear_infinite]"></div>
+          <div class="h-10 bg-slate-100 rounded-xl shimmer animate-[shine_2s_linear_infinite]"></div>
+          <div class="h-10 bg-slate-100 rounded-xl shimmer animate-[shine_2s_linear_infinite]"></div>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <!-- Hero -->
-  <section class="bg-gradient-to-b from-white to-slate-100">
-    <div class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <h1 class="text-3xl md:text-4xl font-bold leading-snug">
-          מקימים אוטומציות חכמות וסוכני AI שמחסכים זמן ומשפרים תהליכים
-        </h1>
-        <p class="mt-4 text-slate-700 text-lg">מיפוי תהליך, תכנון אינטגרציות, בנייה ב‑Make, Zapier ושילובים מותאמים. השאירו פרטים ונחזור אליכם עם הצעה מדויקת.</p>
-        <ul class="mt-6 space-y-2 text-slate-700">
-          <li>✔︎ חיבורי CRM, טפסים, וואטסאפ, מיילים ומערכות BI</li>
-          <li>✔︎ סוכני AI לתמיכה, לידים ותהליכי פנים</li>
-          <li>✔︎ תמחור שקוף והטמעה מהירה</li>
-        </ul>
-        <a href="#form" class="inline-block mt-8 px-6 py-3 rounded-xl bg-slate-900 text-white">בואו נתחיל</a>
-      </div>
-      <div class="bg-white rounded-3xl shadow-sm p-6 border">
-        <img alt="אילוסטרציה של חיבורים בין מערכות" class="w-full rounded-2xl" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1400&auto=format&fit=crop" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Benefits -->
-  <section id="benefits" class="max-w-6xl mx-auto px-4 py-14">
-    <h2 class="text-2xl font-bold">מה תקבלו</h2>
+  <!-- Live examples / agents gallery -->
+  <section id="live" class="max-w-6xl mx-auto px-4 py-14">
+    <h2 class="text-2xl font-bold">דוגמאות חיות לסוכנים ואוטומציות</h2>
+    <p class="mt-2 text-slate-700">אפשר ללחוץ ולהריץ סימולציה קצרה בדפדפן.</p>
     <div class="mt-6 grid md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-2xl p-6 border">
-        <h3 class="font-semibold text-lg">אפיון מדויק</h3>
-        <p class="mt-2 text-slate-700">ממפים את התהליך הקיים ובונים מסלול אוטומציה ברור ומדיד.</p>
+      <!-- Card 1 -->
+      <div class="bg-white rounded-2xl border p-5 hover:shadow-sm transition">
+        <h3 class="font-semibold">סוכן לידים חכם</h3>
+        <p class="text-sm text-slate-600 mt-1">מגיב לטופס/צ'אט, מעשיר נתונים ומקבע פגישה ביומן.</p>
+        <button data-demo="leads" class="mt-4 w-full rounded-xl bg-slate-900 text-white py-2">להריץ הדגמה</button>
+        <pre class="mt-3 text-xs bg-slate-50 rounded-xl p-3 overflow-auto"><code id="demo-leads">קלט: "ליד חדש מגיא, תחום: נדל""ן" → פעולה: יצירת איש קשר ב‑HubSpot, חישוב ציון ליד, הזמנת זום, שליחת וואטסאפ.</code></pre>
       </div>
-      <div class="bg-white rounded-2xl p-6 border">
-        <h3 class="font-semibold text-lg">בנייה והטמעה</h3>
-        <p class="mt-2 text-slate-700">יישום ב‑Make, בדיקות, ותיעוד כדי שתוכלו להמשיך לתחזק.</p>
+      <!-- Card 2 -->
+      <div class="bg-white rounded-2xl border p-5 hover:shadow-sm transition">
+        <h3 class="font-semibold">תמיכת לקוחות ב‑WhatsApp</h3>
+        <p class="text-sm text-slate-600 mt-1">מענה מיידי, חיבור ל‑FAQ ומערכת קריאות.</p>
+        <button data-demo="support" class="mt-4 w-full rounded-xl bg-slate-900 text-white py-2">להריץ הדגמה</button>
+        <pre class="mt-3 text-xs bg-slate-50 rounded-xl p-3 overflow-auto"><code id="demo-support">שאלה: "מה ה‑SLA?" → תשובה מה‑KB + פתיחת קריאה אם צריך, עדכון סטטוס ב‑CRM.</code></pre>
       </div>
-      <div class="bg-white rounded-2xl p-6 border">
-        <h3 class="font-semibold text-lg">תמיכה ושיפור</h3>
-        <p class="mt-2 text-slate-700">ליווי אחרי עלייה לאוויר ושדרוגים לפי הצורך.</p>
+      <!-- Card 3 -->
+      <div class="bg-white rounded-2xl border p-5 hover:shadow-sm transition">
+        <h3 class="font-semibold">QA על קבצים ודוחות</h3>
+        <p class="text-sm text-slate-600 mt-1">סורק מסמכים, מזהה חריגות ומתריע לצוות.</p>
+        <button data-demo="qa" class="mt-4 w-full rounded-xl bg-slate-900 text-white py-2">להריץ הדגמה</button>
+        <pre class="mt-3 text-xs bg-slate-50 rounded-xl p-3 overflow-auto"><code id="demo-qa">קלט: CSV הזמנות → בדיקת כפילויות, אימות ח"פ/מע"מ, שליחת דוח חריגות ל‑Slack.</code></pre>
       </div>
     </div>
   </section>
 
-  <!-- Use cases -->
-  <section id="usecases" class="bg-white border-y">
+  <!-- Services -->
+  <section id="services" class="bg-white border-y">
     <div class="max-w-6xl mx-auto px-4 py-14">
-      <h2 class="text-2xl font-bold">שימושים נפוצים</h2>
+      <h2 class="text-2xl font-bold">מה מקבלים</h2>
+      <div class="mt-6 grid md:grid-cols-4 gap-6">
+        <div class="bg-white rounded-2xl p-6 border">
+          <h3 class="font-semibold">אפיון חד</h3>
+          <p class="mt-2 text-slate-700">מיפוי תהליך, KPI, ותהליך מדידה.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border">
+          <h3 class="font-semibold">בנייה והטמעה</h3>
+          <p class="mt-2 text-slate-700">Make/Zapier, בדיקות, תיעוד והדרכה.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border">
+          <h3 class="font-semibold">סוכני AI</h3>
+          <p class="mt-2 text-slate-700">לידים, תמיכה, גבייה, תפעול.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border">
+          <h3 class="font-semibold">תמיכה מתמשכת</h3>
+          <p class="mt-2 text-slate-700">שדרוגים, ניטור, ו‑SLA גמיש.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI Calculator -->
+  <section id="roi" class="max-w-6xl mx-auto px-4 py-14">
+    <div class="bg-white rounded-3xl border shadow-sm p-6 md:p-10">
+      <div class="md:flex items-start gap-10">
+        <div class="md:w-1/2">
+          <h2 class="text-2xl font-bold">מחשבון חיסכון ו‑ROI</h2>
+          <p class="mt-2 text-slate-700">כמה זמן וכסף אפשר לחסוך? הזינו נתונים וראו מיד.</p>
+          <div class="mt-6 grid grid-cols-2 gap-4">
+            <label class="text-sm">שעות ידניות בחודש לעובד<input id="hours" type="number" min="0" value="12" class="w-full field rounded-xl border p-3 mt-1"></label>
+            <label class="text-sm">מס' עובדים בתהליך<input id="people" type="number" min="1" value="4" class="w-full field rounded-xl border p-3 mt-1"></label>
+            <label class="text-sm">עלות שעתית ממוצעת (₪)<input id="rate" type="number" min="0" value="120" class="w-full field rounded-xl border p-3 mt-1"></label>
+            <label class="text-sm">עלות פרויקט חד‑פעמי (₪)<input id="cost" type="number" min="0" value="9000" class="w-full field rounded-xl border p-3 mt-1"></label>
+          </div>
+          <button id="calc" class="mt-4 px-5 py-2 rounded-xl bg-slate-900 text-white">חשב</button>
+        </div>
+        <div class="md:w-1/2 mt-6 md:mt-0 grid grid-cols-3 gap-4 text-center">
+          <div class="bg-slate-50 border rounded-2xl p-4">
+            <p class="text-2xl font-bold" id="saveHours">—</p>
+            <p class="text-xs text-slate-600">שעות נחסכות/חודש</p>
+          </div>
+          <div class="bg-slate-50 border rounded-2xl p-4">
+            <p class="text-2xl font-bold" id="saveNis">—</p>
+            <p class="text-xs text-slate-600">ש"ח נחסכים/חודש</p>
+          </div>
+          <div class="bg-slate-50 border rounded-2xl p-4">
+            <p class="text-2xl font-bold" id="roiVal">—</p>
+            <p class="text-xs text-slate-600">החזר עלות (חודשים)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" class="bg-white border-y">
+    <div class="max-w-6xl mx-auto px-4 py-14">
+      <h2 class="text-2xl font-bold">איך זה עובד</h2>
+      <ol class="mt-6 grid md:grid-cols-4 gap-6 counter-reset">
+        <li class="bg-white rounded-2xl border p-6">
+          <p class="text-sm text-slate-500">שלב 1</p>
+          <h3 class="font-semibold">שיחה ואבחון</h3>
+          <p class="mt-1 text-slate-700">הגדרת יעדים, KPI וגבולות טכניים.</p>
+        </li>
+        <li class="bg-white rounded-2xl border p-6">
+          <p class="text-sm text-slate-500">שלב 2</p>
+          <h3 class="font-semibold">אפיון ותכנון</h3>
+          <p class="mt-1 text-slate-700">תרשים זרימה + ארכיטקטורה.</p>
+        </li>
+        <li class="bg-white rounded-2xl border p-6">
+          <p class="text-sm text-slate-500">שלב 3</p>
+          <h3 class="font-semibold">בנייה ובדיקות</h3>
+          <p class="mt-1 text-slate-700">Make/Zapier, חיבורי API, ולוגים.</p>
+        </li>
+        <li class="bg-white rounded-2xl border p-6">
+          <p class="text-sm text-slate-500">שלב 4</p>
+          <h3 class="font-semibold">הטמעה ומדידה</h3>
+          <p class="mt-1 text-slate-700">הדרכה, דוח תועלת, ושיפורים.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="max-w-6xl mx-auto px-4 py-14">
+    <h2 class="text-2xl font-bold">חבילות</h2>
+    <div class="mt-6 grid md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl border p-6">
+        <p class="text-sm text-slate-500">חד‑פעמי</p>
+        <h3 class="text-xl font-bold mt-1">מיני פרויקט</h3>
+        <p class="text-sm mt-2">תרשים, בנייה מהירה של אוטומציה אחת.</p>
+        <ul class="mt-4 text-sm space-y-2">
+          <li>• עד 10 צעדים</li>
+          <li>• תיעוד קצר</li>
+          <li>• שבוע אחריות</li>
+        </ul>
+        <a href="#form" class="mt-6 inline-block px-4 py-2 rounded-xl bg-slate-900 text-white">לבירור</a>
+      </div>
+      <div class="bg-white rounded-2xl border p-6 ring-2 ring-brand">
+        <p class="text-sm text-slate-500">מומלץ</p>
+        <h3 class="text-xl font-bold mt-1">סוכן + תהליכים</h3>
+        <p class="text-sm mt-2">סוכן AI + 2–3 אוטומציות תומכות.</p>
+        <ul class="mt-4 text-sm space-y-2">
+          <li>• KPI והגדרות הצלחה</li>
+          <li>• ניטור ושבועיים תמיכה</li>
+          <li>• דוח תועלת</li>
+        </ul>
+        <a href="#form" class="mt-6 inline-block px-4 py-2 rounded-xl bg-slate-900 text-white">לקבל הצעת מחיר</a>
+      </div>
+      <div class="bg-white rounded-2xl border p-6">
+        <p class="text-sm text-slate-500">ריטיינר</p>
+        <h3 class="text-xl font-bold mt-1">שיפור מתמשך</h3>
+        <p class="text-sm mt-2">תור פיצ'רים, תחזוקה ושדרוגים.</p>
+        <ul class="mt-4 text-sm space-y-2">
+          <li>• שעות חודשיות</li>
+          <li>• SLA תמיכה</li>
+          <li>• חיזוי תקלות</li>
+        </ul>
+        <a href="#form" class="mt-6 inline-block px-4 py-2 rounded-xl bg-slate-900 text-white">לתאם</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="bg-white border-y">
+    <div class="max-w-6xl mx-auto px-4 py-14">
+      <h2 class="text-2xl font-bold">שאלות נפוצות</h2>
       <div class="mt-6 grid md:grid-cols-2 gap-6">
-        <ul class="space-y-3 text-slate-800">
-          <li>• קליטת לידים מטפסים, אתרים ו‑Ads אל CRM</li>
-          <li>• בוטים וסוכני AI לשאלות נפוצות והעשרת נתונים</li>
-          <li>• אוטומציה להפקת מסמכים, הצעות מחיר וחשבוניות</li>
-          <li>• התראות חכמות ב‑Slack/WhatsApp/Email</li>
-        </ul>
-        <ul class="space-y-3 text-slate-800">
-          <li>• סנכרון דאטה בין מערכות ERP/BI</li>
-          <li>• סיווג פניות אוטומטי וניתוב לצוותים</li>
-          <li>• בניית דאשבורדים ותזרימים מותאמים</li>
-          <li>• QA אוטומטי על נתונים ומסמכים</li>
-        </ul>
+        <details class="bg-white rounded-2xl border p-5"><summary class="font-semibold cursor-pointer">באילו מערכות אתם תומכים?</summary><p class="mt-2 text-slate-700">רוב מערכות ה‑CRM/ERP/BI, Google Workspace, Slack, WhatsApp API, DocuSign, Monday, Notion ועוד. אפשר גם חיבורי API מותאמים.</p></details>
+        <details class="bg-white rounded-2xl border p-5"><summary class="font-semibold cursor-pointer">כמה זמן לוקח להטמיע?</summary><p class="mt-2 text-slate-700">ממיני פרויקט של ימים בודדים ועד פרויקטים של 2–4 שבועות, תלוי במורכבות ובכמות המערכות.</p></details>
+        <details class="bg-white rounded-2xl border p-5"><summary class="font-semibold cursor-pointer">מה לגבי אבטחה ופרטיות?</summary><p class="mt-2 text-slate-700">עבודה בסביבות מאובטחות, הגבלת הרשאות, לוגים, והצפנת נתונים לפי צורך.</p></details>
+        <details class="bg-white rounded-2xl border p-5"><summary class="font-semibold cursor-pointer">האם חייבים סוכן AI?</summary><p class="mt-2 text-slate-700">לא. אפשר להתחיל באוטומציה אחת שמטפלת בכאב הכי בוער ולהרחיב משם.</p></details>
       </div>
     </div>
   </section>
@@ -95,20 +278,13 @@
   <!-- Lead Form -->
   <section id="form" class="max-w-5xl mx-auto px-4 py-16">
     <div class="bg-white rounded-3xl border shadow-sm p-6 md:p-10">
-      <h2 class="text-2xl font-bold">נשמע רלוונטי? השאירו פרטים ונחזור אליכם</h2>
-      <p class="mt-2 text-slate-700">הטופס מתחבר ישירות ל‑Make. החליפו את כתובת ה‑Webhook בשורה <code>action</code>.</p>
+      <h2 class="text-2xl font-bold">יש התאמה? נשמח לשיחה קצרה</h2>
+      <p class="mt-2 text-slate-700">הטופס מתחבר ל‑Make. החליפו את כתובת ה‑Webhook בשדה <code>action</code>.</p>
 
-      <!-- SUCCESS / ERROR banners -->
-      <div id="banner-success" class="hidden mt-4 p-4 rounded-xl bg-green-50 text-green-800 border border-green-200">
-        התקבלה פנייה. תודה! נחזור אליכם בקרוב.
-      </div>
-      <div id="banner-error" class="hidden mt-4 p-4 rounded-xl bg-red-50 text-red-800 border border-red-200">
-        משהו השתבש. נסו שוב, או שלחו מייל ישירות.
-      </div>
+      <div id="banner-success" class="hidden mt-4 p-4 rounded-xl bg-green-50 text-green-800 border border-green-200">הפנייה התקבלה. תודה! נחזור אליכם בקרוב.</div>
+      <div id="banner-error" class="hidden mt-4 p-4 rounded-xl bg-red-50 text-red-800 border border-red-200">משהו השתבש. נסו שוב או שלחו מייל.</div>
 
-      <form id="leadForm" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4" method="post"
-            action="https://hook.us1.make.com/6a7ipmurmbfmzmkwfcvcb6gkm8olrmgm" novalidate>
-        <!-- Basic info -->
+      <form id="leadForm" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4" method="post" action="https://hook.us1.make.com/6a7ipmurmbfmzmkwfcvcb6gkm8olrmgm" novalidate>
         <div>
           <label class="block text-sm mb-1" for="full_name">שם מלא*</label>
           <input id="full_name" name="full_name" required class="field w-full rounded-xl border p-3" placeholder="שם פרטי ומשפחה" />
@@ -147,22 +323,20 @@
         </div>
         <div class="md:col-span-2">
           <label class="block text-sm mb-1" for="message">כמה מילים על הצורך*</label>
-          <textarea id="message" name="message" required rows="4" class="field w-full rounded-xl border p-3" placeholder="ספרו בקצרה על התהליך שתרצו לאוטומט או על הסוכן שתרצו לבנות"></textarea>
+          <textarea id="message" name="message" required rows="4" class="field w-full rounded-xl border p-3" placeholder="ספרו בקצרה על התהליך או הסוכן שתרצו"></textarea>
         </div>
-
-        <!-- Consent -->
+        <div class="md:col-span-2">
+          <label class="block text-sm mb-1" for="file">להעלות דוגמה (אופציונלי)</label>
+          <input id="file" name="file" type="file" class="w-full rounded-xl border p-3" />
+        </div>
         <div class="md:col-span-2 flex items-center gap-2 mt-2">
           <input id="consent" name="consent" type="checkbox" required class="field w-4 h-4" />
           <label for="consent" class="text-sm text-slate-700">מאשר/ת יצירת קשר והצעת שירות</label>
         </div>
-
-        <!-- Honeypot -->
         <div class="hidden" aria-hidden="true">
           <label>השאירו ריק</label>
           <input type="text" name="website" tabindex="-1" autocomplete="off" />
         </div>
-
-        <!-- Hidden metadata for Make mapping -->
         <input type="hidden" name="page_url" id="page_url" />
         <input type="hidden" name="timestamp" id="timestamp" />
         <input type="hidden" name="utm_source" id="utm_source" />
@@ -170,10 +344,9 @@
         <input type="hidden" name="utm_campaign" id="utm_campaign" />
         <input type="hidden" name="utm_term" id="utm_term" />
         <input type="hidden" name="utm_content" id="utm_content" />
-
         <div class="md:col-span-2 mt-2 flex items-center justify-between gap-4">
           <button id="submitBtn" class="px-6 py-3 rounded-xl bg-slate-900 text-white">שליחה</button>
-          <p class="text-xs text-slate-500">בלחיצה על שליחה הפרטים יישלחו ל‑Make דרך Webhook מאובטח.</p>
+          <p class="text-xs text-slate-500">הפרטים נשלחים ל‑Make דרך Webhook מאובטח.</p>
         </div>
       </form>
     </div>
@@ -181,11 +354,25 @@
 
   <!-- Footer -->
   <footer class="text-center text-sm text-slate-500 py-10">
-    © <span id="y"></span> כל הזכויות שמורות
+    © <span id="y"></span> IDO Automations · כל הזכויות שמורות
   </footer>
 
+  <!-- Floating WhatsApp CTA -->
+  <a href="#form" class="fixed bottom-5 left-5 z-40 rounded-full shadow-lg bg-green-500 text-white px-4 py-3">
+    יש שאלות? בואו נדבר
+  </a>
+
   <script>
-    // Utility: fill metadata + UTM
+    // KPIs animation
+    const ease = t => 1 - Math.pow(1 - t, 3);
+    function countTo(el, target, suffix=''){ const d=1000; const s=performance.now(); function f(now){ const p=Math.min(1,(now-s)/d); el.textContent = Math.round(ease(p)*target)+suffix; if(p<1) requestAnimationFrame(f);} requestAnimationFrame(f); }
+    window.addEventListener('load',()=>{
+      countTo(document.getElementById('kpi-hours'), 48, '');
+      countTo(document.getElementById('kpi-errors'), 72, '%');
+      countTo(document.getElementById('kpi-roi'), 5, '×');
+    });
+
+    // UTM/metadata
     (function(){
       document.getElementById('page_url').value = window.location.href;
       document.getElementById('timestamp').value = new Date().toISOString();
@@ -195,43 +382,46 @@
       document.getElementById('y').textContent = new Date().getFullYear();
     })();
 
-    // Client-side validation + AJAX submit to Make webhook with graceful fallback
+    // Demos: mock output
+    document.querySelectorAll('[data-demo]').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const id = btn.dataset.demo;
+        const out = document.getElementById('demo-'+id);
+        out.textContent += "\n→ הדגמה: הצליח (1.2 שניות)";
+      });
+    });
+
+    // ROI calc
+    document.getElementById('calc').addEventListener('click',()=>{
+      const h=+hours.value||0, n=+people.value||1, r=+rate.value||0, c=+cost.value||0;
+      const saveH = h*n*0.7; // מניחים 70% צמצום זמן
+      const saveN = Math.round(saveH*r);
+      const roiMonths = saveN>0 ? Math.max(1, Math.ceil(c/ saveN)) : '—';
+      saveHours.textContent = Math.round(saveH);
+      saveNis.textContent = new Intl.NumberFormat('he-IL').format(saveN);
+      roiVal.textContent = roiMonths;
+    });
+
+    // Form submit with graceful fallback
     const form = document.getElementById('leadForm');
     const submitBtn = document.getElementById('submitBtn');
     const success = document.getElementById('banner-success');
     const error = document.getElementById('banner-error');
 
     form.addEventListener('submit', async function(e){
-      // If required fields missing, let browser show native validation
-      if(!form.checkValidity()) return;
-      e.preventDefault();
-
-      // Simple honeypot check
+      if(!form.checkValidity()) return; e.preventDefault();
       const hp = form.querySelector('input[name="website"]').value.trim();
       if(hp){ return; }
-
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'שולח...';
-      success.classList.add('hidden');
-      error.classList.add('hidden');
-
+      submitBtn.disabled = true; submitBtn.textContent = 'שולח...';
+      success.classList.add('hidden'); error.classList.add('hidden');
       try {
         const fd = new FormData(form);
         const res = await fetch(form.action, { method: 'POST', body: fd });
-        if(res.ok){
-          form.reset();
-          success.classList.remove('hidden');
-        } else {
-          // If Make responds non-200, fallback to regular POST navigation
-          form.submit();
-        }
+        if(res.ok){ form.reset(); success.classList.remove('hidden'); }
+        else { form.submit(); }
       } catch (err) {
-        error.classList.remove('hidden');
-        console.error(err);
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'שליחה';
-      }
+        error.classList.remove('hidden'); console.error(err);
+      } finally { submitBtn.disabled = false; submitBtn.textContent = 'שליחה'; }
     });
   </script>
 </body>
