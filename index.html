@@ -19,6 +19,20 @@
     .field:invalid{outline:2px solid #ef4444}
     .glass{backdrop-filter: blur(10px); background: rgba(255,255,255,.7)}
     .shimmer{background:linear-gradient(110deg,#0000 30%,#ffffff40 45%,#0000 60%) 0 0/200% 100%}
+    .flow-box{ @apply bg-white border rounded-xl p-3 text-sm shadow-sm; }
+    .flow-cap{ @apply text-[11px] text-slate-500; }
+    .flow-svg{ width:100%; height:220px; }
+    @keyframes dash { to { stroke-dashoffset: 0; } }
+    @keyframes pulse { 0%{opacity:.2} 50%{opacity:1} 100%{opacity:.2} }
+    .flow-line{ stroke:#0ea5e9; stroke-width:3; fill:none; stroke-dasharray:180; stroke-dashoffset:180; animation: dash 1.8s ease forwards; }
+    .flow-dot{ r:5; fill:#0ea5e9; animation: pulse 1.2s ease-in-out infinite; }
+    .flow-box{ background:#fff; border:1px solid rgb(226 232 240); border-radius:12px; padding:12px; font-size:14px; box-shadow: 0 1px 2px rgba(0,0,0,.03);} 
+    .flow-cap{ font-size:11px; color: rgb(100 116 139);} 
+    .flow-svg{ width:100%; height:220px; }
+    @keyframes dash { from { stroke-dashoffset: 180; } to { stroke-dashoffset: 0; } }
+    @keyframes pulse { 0%{opacity:.2} 50%{opacity:1} 100%{opacity:.2} }
+    .flow-line{ stroke:#0ea5e9; stroke-width:3; fill:none; stroke-dasharray:180; stroke-dashoffset:180; animation: dash 1.8s ease forwards; }
+    .flow-dot{ r:5; fill:#0ea5e9; animation: pulse 1.2s ease-in-out infinite; }
   </style>
   <script>
     // Tailwind config
@@ -109,28 +123,25 @@
   <!-- Live examples / agents gallery -->
   <section id="live" class="max-w-6xl mx-auto px-4 py-14">
     <h2 class="text-2xl font-bold">דוגמאות חיות לסוכנים ואוטומציות</h2>
-    <p class="mt-2 text-slate-700">אפשר ללחוץ ולהריץ סימולציה קצרה בדפדפן.</p>
+    <p class="mt-2 text-slate-700">לחיצה על כפתור תפתח סימולציה גרפית קצרה שמראה את הזרימה בין המערכות.</p>
     <div class="mt-6 grid md:grid-cols-3 gap-6">
       <!-- Card 1 -->
       <div class="bg-white rounded-2xl border p-5 hover:shadow-sm transition">
         <h3 class="font-semibold">סוכן לידים חכם</h3>
-        <p class="text-sm text-slate-600 mt-1">מגיב לטופס/צ'אט, מעשיר נתונים ומקבע פגישה ביומן.</p>
-        <button data-demo="leads" class="mt-4 w-full rounded-xl bg-slate-900 text-white py-2">להריץ הדגמה</button>
-        <pre class="mt-3 text-xs bg-slate-50 rounded-xl p-3 overflow-auto"><code id="demo-leads">קלט: "ליד חדש מגיא, תחום: נדל""ן" → פעולה: יצירת איש קשר ב‑HubSpot, חישוב ציון ליד, הזמנת זום, שליחת וואטסאפ.</code></pre>
+        <p class="text-sm text-slate-600 mt-1">מקבל ליד מטופס/צ'אט, מעשיר נתונים, קובע פגישה ושולח אישור.</p>
+        <button data-sim="leads" class="mt-4 w-full rounded-xl bg-slate-900 text-white py-2">לראות סימולציה</button>
       </div>
       <!-- Card 2 -->
       <div class="bg-white rounded-2xl border p-5 hover:shadow-sm transition">
         <h3 class="font-semibold">תמיכת לקוחות ב‑WhatsApp</h3>
-        <p class="text-sm text-slate-600 mt-1">מענה מיידי, חיבור ל‑FAQ ומערכת קריאות.</p>
-        <button data-demo="support" class="mt-4 w-full rounded-xl bg-slate-900 text-white py-2">להריץ הדגמה</button>
-        <pre class="mt-3 text-xs bg-slate-50 rounded-xl p-3 overflow-auto"><code id="demo-support">שאלה: "מה ה‑SLA?" → תשובה מה‑KB + פתיחת קריאה אם צריך, עדכון סטטוס ב‑CRM.</code></pre>
+        <p class="text-sm text-slate-600 mt-1">שאלה נכנסת → תשובה מה‑KB → פתיחת קריאה במערכת שירות.</p>
+        <button data-sim="support" class="mt-4 w-full rounded-xl bg-slate-900 text-white py-2">לראות סימולציה</button>
       </div>
       <!-- Card 3 -->
       <div class="bg-white rounded-2xl border p-5 hover:shadow-sm transition">
         <h3 class="font-semibold">QA על קבצים ודוחות</h3>
-        <p class="text-sm text-slate-600 mt-1">סורק מסמכים, מזהה חריגות ומתריע לצוות.</p>
-        <button data-demo="qa" class="mt-4 w-full rounded-xl bg-slate-900 text-white py-2">להריץ הדגמה</button>
-        <pre class="mt-3 text-xs bg-slate-50 rounded-xl p-3 overflow-auto"><code id="demo-qa">קלט: CSV הזמנות → בדיקת כפילויות, אימות ח"פ/מע"מ, שליחת דוח חריגות ל‑Slack.</code></pre>
+        <p class="text-sm text-slate-600 mt-1">קובץ נכנס → בדיקות תקינות → התרעה ל‑Slack עם דוח חריגות.</p>
+        <button data-sim="qa" class="mt-4 w-full rounded-xl bg-slate-900 text-white py-2">לראות סימולציה</button>
       </div>
     </div>
   </section>
@@ -352,6 +363,74 @@
     </div>
   </section>
 
+  <!-- Simulation Modal -->
+  <dialog id="simModal" class="w-[95vw] md:w-[860px] rounded-2xl backdrop:bg-black/40 p-0">
+    <div class="p-5 md:p-6 bg-white rounded-2xl">
+      <div class="flex items-center justify-between gap-4">
+        <div>
+          <h3 id="simTitle" class="text-xl font-bold">סימולציה</h3>
+          <p id="simSub" class="text-sm text-slate-600 mt-1"></p>
+        </div>
+        <button id="simClose" class="rounded-xl border px-3 py-1.5 text-sm">סגירה</button>
+      </div>
+      <div class="mt-5 grid md:grid-cols-4 gap-3 items-start">
+        <div class="flow-box"><div class="flow-cap">מקור</div><div id="boxA" class="font-medium">טופס אתר</div></div>
+        <div class="flow-box"><div class="flow-cap">עיבוד</div><div id="boxB" class="font-medium">העשרת נתונים</div></div>
+        <div class="flow-box"><div class="flow-cap">מערכת יעד</div><div id="boxC" class="font-medium">CRM</div></div>
+        <div class="flow-box"><div class="flow-cap">אקשן</div><div id="boxD" class="font-medium">שליחת אישור</div></div>
+      </div>
+      <svg class="flow-svg mt-3" viewBox="0 0 860 220" preserveAspectRatio="none">
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto-start-reverse">
+            <path d="M0,0 L0,6 L9,3 z" fill="#0ea5e9" />
+          </marker>
+        </defs>
+        <!-- lines A→B, B→C, C→D -->
+        <path id="p1" class="flow-line" d="M 110 70 C 220 70 250 70 360 70" marker-end="url(#arrow)"/>
+        <circle class="flow-dot" cx="110" cy="70" />
+        <path id="p2" class="flow-line" d="M 470 70 C 580 70 610 70 720 70" marker-end="url(#arrow)"/>
+        <circle class="flow-dot" cx="470" cy="70" />
+        <path id="p3" class="flow-line" d="M 720 150 C 610 150 580 150 470 150" marker-end="url(#arrow)"/>
+        <circle class="flow-dot" cx="720" cy="150" />
+      </svg>
+      <div id="simNotes" class="text-xs text-slate-600 mt-2"></div>
+    </div>
+  </dialog>
+
+  <!-- Simulation Modal -->
+  <dialog id="simModal" class="w-[95vw] md:w-[860px] rounded-2xl backdrop:bg-black/40 p-0">
+    <div class="p-5 md:p-6 bg-white rounded-2xl">
+      <div class="flex items-center justify-between gap-4">
+        <div>
+          <h3 id="simTitle" class="text-xl font-bold">סימולציה</h3>
+          <p id="simSub" class="text-sm text-slate-600 mt-1"></p>
+        </div>
+        <button id="simClose" class="rounded-xl border px-3 py-1.5 text-sm">סגירה</button>
+      </div>
+      <div class="mt-5 grid md:grid-cols-4 gap-3 items-start">
+        <div class="flow-box"><div class="flow-cap">מקור</div><div id="boxA" class="font-medium">טופס אתר</div></div>
+        <div class="flow-box"><div class="flow-cap">עיבוד</div><div id="boxB" class="font-medium">העשרת נתונים</div></div>
+        <div class="flow-box"><div class="flow-cap">מערכת יעד</div><div id="boxC" class="font-medium">CRM</div></div>
+        <div class="flow-box"><div class="flow-cap">אקשן</div><div id="boxD" class="font-medium">שליחת אישור</div></div>
+      </div>
+      <svg class="flow-svg mt-3" viewBox="0 0 860 220" preserveAspectRatio="none">
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto-start-reverse">
+            <path d="M0,0 L0,6 L9,3 z" fill="#0ea5e9" />
+          </marker>
+        </defs>
+        <!-- lines A→B, B→C, C→D -->
+        <path id="p1" class="flow-line" d="M 110 70 C 220 70 250 70 360 70" marker-end="url(#arrow)"/>
+        <circle class="flow-dot" cx="110" cy="70" />
+        <path id="p2" class="flow-line" d="M 470 70 C 580 70 610 70 720 70" marker-end="url(#arrow)"/>
+        <circle class="flow-dot" cx="470" cy="70" />
+        <path id="p3" class="flow-line" d="M 720 150 C 610 150 580 150 470 150" marker-end="url(#arrow)"/>
+        <circle class="flow-dot" cx="720" cy="150" />
+      </svg>
+      <div id="simNotes" class="text-xs text-slate-600 mt-2"></div>
+    </div>
+  </dialog>
+
   <!-- Footer -->
   <footer class="text-center text-sm text-slate-500 py-10">
     © <span id="y"></span> IDO Automations · כל הזכויות שמורות
@@ -382,14 +461,60 @@
       document.getElementById('y').textContent = new Date().getFullYear();
     })();
 
-    // Demos: mock output
-    document.querySelectorAll('[data-demo]').forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        const id = btn.dataset.demo;
-        const out = document.getElementById('demo-'+id);
-        out.textContent += "\n→ הדגמה: הצליח (1.2 שניות)";
+    // Simulations modal
+    const modal = document.getElementById('simModal');
+    const closeBtn = document.getElementById('simClose');
+    const titleEl = document.getElementById('simTitle');
+    const subEl = document.getElementById('simSub');
+    const notesEl = document.getElementById('simNotes');
+    const boxA = document.getElementById('boxA');
+    const boxB = document.getElementById('boxB');
+    const boxC = document.getElementById('boxC');
+    const boxD = document.getElementById('boxD');
+
+    function resetLines(){
+      document.querySelectorAll('.flow-line').forEach(l=>{
+        l.style.animation='none'; l.offsetHeight; l.style.animation='';
       });
+    }
+
+    function openSim(kind){
+      resetLines();
+      if(kind==='leads'){
+        titleEl.textContent='סוכן לידים חכם';
+        subEl.textContent='טופס אתר → העשרת נתונים → CRM → וואטסאפ/אימייל אישור';
+        boxA.textContent='טופס אתר';
+        boxB.textContent='העשרת נתונים';
+        boxC.textContent='HubSpot / Pipedrive';
+        boxD.textContent='הודעת אישור + זימון';
+        notesEl.innerHTML='הסוכן מבצע ניקוי נתונים, בדיקת כפילויות, חישוב ציון ליד, קובע זום ושולח וואטסאפ.';
+      }
+      if(kind==='support'){
+        titleEl.textContent='תמיכת לקוחות ב‑WhatsApp';
+        subEl.textContent='WhatsApp API → מאגר ידע → מערכת קריאות → עדכון לקוח';
+        boxA.textContent='WhatsApp API';
+        boxB.textContent='חיפוש תשובה ב‑KB';
+        boxC.textContent='Zendesk / Freshdesk';
+        boxD.textContent='עדכון סטטוס ללקוח';
+        notesEl.innerHTML='זיהוי כוונה, תשובה מיידית ואם צריך פתיחת טיקט והעברת נציג.';
+      }
+      if(kind==='qa'){
+        titleEl.textContent='QA על קבצים ודוחות';
+        subEl.textContent='קובץ נכנס → בדיקות תקינות → Slack → דוח חריגות';
+        boxA.textContent='קליטת CSV/Excel';
+        boxB.textContent='ולידציות וכללים';
+        boxC.textContent='Slack / Email';
+        boxD.textContent='דוח חריגות + קישורים';
+        notesEl.innerHTML='בדיקת כפילויות, אימות מספרי עוסק/ח"פ, ספי חריגה והתראה לצוות.';
+      }
+      if(typeof modal.showModal==='function') modal.showModal();
+      else modal.setAttribute('open','');
+    }
+
+    document.querySelectorAll('[data-sim]').forEach(btn=>{
+      btn.addEventListener('click',()=> openSim(btn.dataset.sim));
     });
+    closeBtn.addEventListener('click',()=> modal.close());
 
     // ROI calc
     document.getElementById('calc').addEventListener('click',()=>{
